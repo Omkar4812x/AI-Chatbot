@@ -105,3 +105,7 @@ userInput.addEventListener('keypress', (e) => {
 
 // Initial greeting
 appendMessage('Hello! I\'m your AI assistant powered by Gemini. How can I help you today?');
+function sanitizeInput(str) {
+    return str ? str.replace(/</g, '&lt;').replace(/>/g, '&gt;').trim() : '';
+}
+if (typeof module !== 'undefined') module.exports = { sanitizeInput };
